@@ -57,22 +57,22 @@ src/main/java/marketing/rule/engine/
 
 ```mermaid
 graph TD
-    subgraph Client Layer
-        A[Client/API]
+    subgraph Client
+        A["Client / API"]
     end
 
-    subgraph Rule Engine
-        B{ISpecification (Rule Tree)}
+    subgraph RuleEngine
+        B["ISpecification Rule Tree"]
     end
 
     subgraph Context
-        C[User]
-        D[Order]
+        C["User Object"]
+        D["Order Object"]
     end
 
     A -- "evaluate(rule, user, order)" --> B
-    B -- "isSatisfiedBy(user, order)" --> C
-    B -- "isSatisfiedBy(user, order)" --> D
+    B -- "Reads" --> C
+    B -- "Reads" --> D
 ```
 
 ## 如何執行 (How to Run)
